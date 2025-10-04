@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
+import todoRoutes from "./routes/todo.routes";
 
 dotenv.config();
 
@@ -11,12 +12,13 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.use("/api/todos", todoRoutes);
+
 app.get("/", (req, res) => {
-  res.send("Node.js is running successfully again!");
+  res.send("API is running successfully!");
 });
 
 async function startServer() {
-  console.log("Starting server");
   try {
     await mongoose.connect(process.env.DATABASE_URL!);
     console.log("Connected to MongoDB");
