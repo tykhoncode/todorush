@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "nodemon --watch src --ext ts,json --exec ts-node src/server.ts",
     "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "start": "node dist/server.js",
     "test": "jest --config jest.config.ts",
     "test:watch": "jest --config jest.config.ts --watch",
     "test:coverage": "jest --config jest.config.ts --coverage"
