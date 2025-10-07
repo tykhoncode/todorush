@@ -4,7 +4,14 @@ import todoRoutes from "./routes/todo.routes";
 import systemRoutes from "./routes/system.routes";
 
 export const app = express();
-app.use(cors());
+
+app.use(
+  cors({
+    origin: ["https://todorush-flame.vercel.app", "http://localhost:5173"]
+  })
+);
+app.options("*", cors());
+
 app.use(express.json());
 
 app.use("/api/todos", todoRoutes);
