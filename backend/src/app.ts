@@ -10,7 +10,6 @@ app.use(
     origin: ["https://todorush-flame.vercel.app", "http://localhost:5173"]
   })
 );
-app.options("*", cors());
 
 app.use(express.json());
 
