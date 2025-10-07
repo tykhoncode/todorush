@@ -1,0 +1,112 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  border-bottom: 1px solid #e5e5e5;
+  gap: 8px;
+
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+
+    .checkbox {
+      accent-color: var(--color-primary);
+    }
+
+    .title {
+      background: transparent;
+      border: none;
+      padding: 0;
+      text-align: left;
+      flex: 1;
+      cursor: text;
+      font-size: 16px;
+      color: #111;
+      display: block;
+      width: 100%;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      line-height: 1.4;
+
+      &.titleDone {
+        text-decoration: line-through;
+        color: #6b7280;
+      }
+    }
+
+    .input {
+      flex: 1;
+      min-width: 0;
+      font: inherit;
+      color: inherit;
+      line-height: 1.6;
+      background: transparent;
+      border: none;
+      padding: 0;
+      outline: none;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      caret-color: currentColor;
+
+      &.inputDone {
+        text-decoration: line-through;
+        color: #6b7280;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 2px;
+
+    button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 18px;
+      transition: opacity 0.15s;
+      padding: 0 12px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.editBtn {
+        color: var(--color-primary);
+      }
+
+      &.deleteBtn {
+        color: #6b7280;
+        font-size: 18px;
+      }
+
+      &.cancelBtn {
+        color: #6b7280;
+
+        @media (max-width: 575px) {
+          display: none;
+        }
+      }
+
+      &.saveBtn {
+        background: var(--color-primary);
+        color: white;
+        border-radius: 8px;
+        padding: 6px 10px;
+
+        &:hover {
+          opacity: 1;
+          background-color: var(--color-primary-dark, #2fb789);
+        }
+      }
+    }
+  }
+}

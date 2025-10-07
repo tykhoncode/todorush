@@ -24,3 +24,19 @@ export async function toggleTodo(id: string, done: boolean): Promise<Todo> {
 export async function deleteTodo(id: string): Promise<void> {
   await api.delete(`/api/todos/${id}`);
 }
+
+export async function updateTodo(
+  id: string,
+  body: Partial<Pick<Todo, "title" | "done">>
+): Promise<Todo> {
+  const { data } = await api.patch(`/api/todos/${id}`, body);
+  return data;
+}
+
+export async function updateTodoTitle(
+  id: string,
+  title: string
+): Promise<Todo> {
+  const { data } = await api.patch(`/api/todos/${id}`, { title });
+  return data;
+}

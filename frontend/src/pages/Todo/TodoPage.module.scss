@@ -1,0 +1,15 @@
+.todoPage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+
+  .title {
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+}
+
+.loading {
+  color: #9ca3af;
+}
